@@ -28,9 +28,9 @@ export async function fetchLatestBeta(): Promise<string> {
   const response = await fetch(`${WA_URL}?v=${version || ''}`, {
     headers: {
       'user-agent': WA_USER_AGENT,
-      'accept-language': 'en-US,en;q=1',
+      'accept-language': 'zh-CN,zh;q=1',
       'sec-fetch-mode': 'navigate',
-      cookie: 'wa_lang_pref=en',
+      cookie: 'wa_lang_pref=zh;wa_build=c',
       pragma: 'no-cache',
       'cache-control': 'no-cache',
     },

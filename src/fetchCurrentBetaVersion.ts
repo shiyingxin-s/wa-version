@@ -28,7 +28,7 @@ export async function fetchCurrentBetaVersion(): Promise<string | null> {
   const wa_beta_version = `production%2F${(
     Date.now() / 1000 -
     (3600 / 24) * 30
-  ).toFixed(0)}%2F${latestVersion.replace('-beta', '')}`;
+  ).toFixed(0)}%2F${latestVersion?.replace('-beta', '')}`;
 
   const responseSW = await fetch(`${WA_URL}`, {
     headers: {
