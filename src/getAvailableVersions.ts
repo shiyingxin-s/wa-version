@@ -28,8 +28,10 @@ export function getAvailableVersions(
   versionMatch?: string | semver.Range,
   includePrerelease = true
 ): string[] {
+  // 添加过滤.DS_Store
   const versions = fs
     .readdirSync(HTML_DIR)
+    .filter((file) => file.endsWith('.html') && file !== '.DS_Store')
     .map((c) => path.basename(c, '.html'));
 
   const sorted = semver.sort(versions);
